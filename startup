@@ -1,0 +1,31 @@
+local function clear()
+    term.setBackgroundColor(colours.black)
+    term.clear()
+    term.setCursorPos(1,1)
+end
+
+clear()
+DSD_VERSION = 'a1.2'
+DSD_VERSION_LONG = 'alpha version 1 revision 2'
+DSD_UPDATE_DATE = '05/09/2024'
+
+term.setTextColor(colors.cyan)
+print('Dhillt Software Distribution ' .. DSD_VERSION_LONG)
+term.setTextColor(colors.gray)
+print('(DSD ' .. DSD_VERSION ..')')
+print('Updated on ' .. DSD_UPDATE_DATE ..', Dhillt Engineering')
+term.setTextColor(colors.white)
+
+local dpak = require '.lib.dpak'
+
+print('dpak version ' .. dpak.version)
+term.setTextColor(colors.green)
+print(#dpak.registeredPackages .. ' registered program(s)')
+print(#dpak.registeredLibraries .. ' registered lib(s)')
+term.setTextColor(colors.white)
+
+-- register all programs within /prg
+-- register all help files within /prg/.help
+dpak.init()
+
+print()

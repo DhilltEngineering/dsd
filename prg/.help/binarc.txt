@@ -1,0 +1,1 @@
+binarc (BINary ARChive) is a tool to bundle multiple files together into one. binarc makes no attempt to compress archives, so you may need a file compressor if space is an issue.
